@@ -1,30 +1,40 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Fonts/OriginTech personal use.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sounds/forgeSound.wav" type="AudioStream" id=3]
 
-[sub_resource type="DynamicFont" id=1]
-size = 47
-font_data = ExtResource( 1 )
+[node name="Node2D" type="Node2D"]
 
-[node name="Control" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="TileMap" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 256, 128 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( -458756, 102, 0, -393222, 32, 0, -327686, 50, 0, -327684, 232, 0, -327683, 232, 0, -262148, 232, 0, -262147, 232, 0, -327680, 36, 0, -196616, 232, 0, -196615, 232, 0, -196614, 232, 0, -196613, 232, 0, -196612, 79, 0, -196611, 32, 0, -196610, 36, 0, -196609, 36, 0, -262144, 36, 0, -262143, 36, 0, -262142, 36, 0, -262141, 36, 0, -131080, 232, 0, -131079, 232, 0, -131078, 232, 0, -131077, 232, 0, -131076, 82, 0, -131075, 76, 0, -131074, 36, 0, -131073, 232, 0, -196608, 232, 0, -196607, 36, 0, -196606, 36, 0, -196605, 36, 0, -196604, 36, 0, -65540, 36, 0, -65539, 36, 0, -65538, 36, 0, -131071, 36, 0, -131070, 36, 0, -131069, 36, 0, -131068, 36, 0, -131067, 36, 0, -4, 232, 0, -3, 232, 0, -65536, 232, 0, -65535, 36, 0, -65534, 36, 0, -65533, 36, 0, -65532, 36, 0, -65531, 36, 0, 65532, 232, 0, 65533, 232, 0, 1, 36, 0, 4, 36, 0, 5, 36, 0, 131067, 36, 0, 131068, 36, 0, 131069, 36, 0, 131070, 36, 0, 131071, 36, 0, 65536, 36, 0, 65537, 36, 0, 65538, 36, 0, 65539, 36, 0, 65540, 36, 0, 65541, 36, 0, 196603, 36, 0, 196604, 36, 0, 196605, 36, 0, 196606, 36, 0, 131073, 36, 0, 131074, 36, 0, 131076, 36, 0, 131077, 36, 0, 262140, 36, 0, 262141, 36, 0, 262142, 36, 0, 196609, 36, 0, 196610, 36, 0, 196611, 36, 0, 196612, 36, 0, 196613, 36, 0, 327677, 36, 0, 327678, 36, 0, 327679, 36, 0, 262144, 36, 0, 262145, 36, 0, 262146, 36, 0, 262147, 36, 0, 393214, 36, 0, 393215, 36, 0, 327680, 36, 0, 327681, 36, 0, 327682, 36, 0, 327683, 36, 0 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+[node name="TileMap2" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 256, 128 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+format = 1
+tile_data = PoolIntArray( -327684, 73, 0, -327683, 134, 0, -262146, 73, 0, -196613, 74, 0, -196609, 72, 0, -131078, 135, 0, -196608, 132, 0, -65541, 74, 0, -65537, 72, 0, -4, 75, 0, -3, 133, 0, -2, 75, 0 )
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -171.5
-margin_top = -22.5
-margin_right = 171.5
-margin_bottom = 22.5
-custom_fonts/font = SubResource( 1 )
-text = "Coming Soon"
-align = 1
-valign = 1
+[node name="TileMap3" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 256, 128 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+format = 1
+
+[node name="Control" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+autoplay = true

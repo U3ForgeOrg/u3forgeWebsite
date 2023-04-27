@@ -14,7 +14,12 @@ config/name="u3forge"
 run/main_scene="res://Scenes/ComingSoonScene.tscn"
 boot_splash/image="res://Photos/Transparent_rectangle.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+config/icon="res://Photos/Transparent_rectangle.png"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [gui]
 
