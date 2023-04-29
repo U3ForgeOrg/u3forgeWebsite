@@ -4,18 +4,7 @@ extends AnimatedSprite
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if OS.get_name() == "HTML5":
-		var is_mobile = false
-		if Engine.has_singleton("WebView"):
-			var user_agent = Engine.get_singleton("WebView").evaluate_javascript("navigator.userAgent")
-			var mobile_strings = ["Mobile", "Tablet", "Android", "iPhone", "iPad", "iPod"]
-			for string in mobile_strings:
-				if user_agent.find(string) != -1:
-					is_mobile = true
-					break
-		if is_mobile:
-			get_parent().get_node("Control").get_node("Label").text="mobile"
-		else:
-			get_parent().get_node("Control").get_node("Label").text="pc"
+		get_parent().get_node("Control").get_node("Label").text=OS.get_model_name()
 		
 
 
