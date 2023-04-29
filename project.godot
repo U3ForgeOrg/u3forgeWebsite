@@ -18,8 +18,8 @@ config/icon="res://Photos/Transparent_rectangle.png"
 
 [display]
 
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/vsync/use_vsync=false
+window/stretch/mode="2d"
 
 [gui]
 
