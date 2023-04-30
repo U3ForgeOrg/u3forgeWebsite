@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="u3forge"
-run/main_scene="res://Scenes/ComingSoonScene.tscn"
+run/main_scene="res://Scenes/Main.tscn"
 boot_splash/image="res://Photos/Transparent_rectangle.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://Photos/Transparent_rectangle.png"
