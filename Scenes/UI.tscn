@@ -15,7 +15,7 @@ script = ExtResource( 2 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.627451 )
+color = Color( 0, 0, 0, 0.486275 )
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.49
@@ -34,5 +34,3 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": true
 }
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
