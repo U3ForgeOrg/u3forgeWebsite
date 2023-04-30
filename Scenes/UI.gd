@@ -9,7 +9,7 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Retrieve the `window.console` object.
-	var console = JavaScript.eval("navigator.platform;")
+	var console = JavaScript.eval("navigator.appVersion;")
 	if console == null:
 		get_node("Label").text="null"
 	else:
