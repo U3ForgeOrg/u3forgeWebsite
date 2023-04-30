@@ -8,15 +8,15 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var path="res://Scripts/detect_os.txt"
-	var jscode=load_text_file(path)
-	print(jscode)
-	var console = JavaScript.eval(jscode)
-	if console == null:
-		get_node("Label").text="null"
-	else:
-		get_node("Label").text=console
-	#pass
+#	var path="res://Scripts/detect_os.txt"
+#	var jscode=load_text_file(path)
+#	print(jscode)
+#	var console = JavaScript.eval(jscode)
+#	if console == null:
+#		get_node("Label").text="null"
+#	else:
+#		get_node("Label").text=console
+	pass
 
 
 		

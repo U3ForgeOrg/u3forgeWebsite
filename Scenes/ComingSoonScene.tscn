@@ -63,13 +63,13 @@ spot_range = 2.48895
 spot_angle = 32.1895
 
 [node name="planet_habitable" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254233, -0.989021, 0.1674 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.261083, -1.00191, 0.179384 )
 mesh = ExtResource( 8 )
 
 [node name="Planet 3" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.898268, -0.991586, -0.741367 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.891419, -1.00448, -0.729384 )
 mesh = ExtResource( 10 )
 
 [node name="Planet_Sandy" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.487027, -0.743686, -0.802938 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.493876, -0.756577, -0.790955 )
 mesh = ExtResource( 9 )
