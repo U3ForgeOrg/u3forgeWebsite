@@ -8,10 +8,18 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	if OS.has_feature("touchscreen"):
-		get_node("Label").text="mobile"
+	# Retrieve the `window.console` object.
+	var console = JavaScript.eval("navigator.platform;")
+	if console == null:
+		get_node("Label").text="null"
 	else:
-		get_node("Label").text="pc"
+		get_node("Label").text=console
+		# Call the `window.console.log()` method.
+		
+
+
+
+
 
 
 

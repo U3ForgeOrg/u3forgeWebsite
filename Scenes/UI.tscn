@@ -34,3 +34,5 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
