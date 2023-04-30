@@ -28,20 +28,19 @@ stream = ExtResource( 3 )
 autoplay = true
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0454889, 3.59029, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0454889, 5.08685, -6.54166e-08 )
 environment = SubResource( 2 )
 current = true
 fov = 64.8522
 
-[node name="UI" parent="." instance=ExtResource( 5 )]
-
-[node name="SpaceShip" type="MeshInstance" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0911103, 0, 1.94592 )
+[node name="SpaceShip" type="MeshInstance" parent="Camera"]
+transform = Transform( -4.37114e-08, 0, -1, -1, -4.37114e-08, 4.37114e-08, -4.37114e-08, 1, 1.91069e-15, -0.0456214, -1.94592, -5.08685 )
 mesh = ExtResource( 4 )
+skeleton = NodePath("../..")
 material/0 = SubResource( 1 )
 script = ExtResource( 6 )
 
-[node name="SpotLight" type="SpotLight" parent="SpaceShip"]
+[node name="SpotLight" type="SpotLight" parent="Camera/SpaceShip"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0288153, 0.661947, 0.0266375 )
 light_color = Color( 0.329412, 0.898039, 0.92549, 1 )
 light_energy = 2.746
@@ -49,23 +48,28 @@ light_indirect_energy = 0.0
 spot_range = 2.48895
 spot_angle = 32.1895
 
+[node name="planet_habitable" type="MeshInstance" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.299722, -0.1674, -6.07587 )
+mesh = ExtResource( 8 )
+skeleton = NodePath("../..")
+
+[node name="Planet 3" type="MeshInstance" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.852779, 0.741367, -6.07843 )
+mesh = ExtResource( 10 )
+skeleton = NodePath("../..")
+
+[node name="Planet_Sandy" type="MeshInstance" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.532516, 0.802938, -5.83053 )
+mesh = ExtResource( 9 )
+skeleton = NodePath("../..")
+
+[node name="UI" parent="." instance=ExtResource( 5 )]
+
 [node name="Virtual joystick" parent="." instance=ExtResource( 7 )]
 action_left = "left"
 action_right = "right"
 action_up = "up"
 action_down = "down"
-
-[node name="planet_habitable" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254233, -0.989021, 0.1674 )
-mesh = ExtResource( 8 )
-
-[node name="Planet 3" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.898268, -0.991586, -0.741367 )
-mesh = ExtResource( 10 )
-
-[node name="Planet_Sandy" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.487027, -0.743686, -0.802938 )
-mesh = ExtResource( 9 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.050513, 0.285706, 0.0556838 )
