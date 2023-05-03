@@ -6,14 +6,14 @@ var res=Array()
 func _ready():
 	var path="res://Scripts/detect_os.txt"
 	var jscode=load_text_file(path)
-	print(jscode)
-	var console = JavaScript.eval(jscode)
+	#print(jscode)
+	var out = JavaScript.eval(jscode)
 	
-	if console == null:
-		res.append("150")
-		res.append("333")
+	if out == null:
+		res.append("378")
+		res.append("793")
 	else:
-		res=str(console).split("/")
+		res=str(out).split("/")
 		
 	#pass
 
