@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://joystick/virtual_joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://SpaceSkyBox/skybox1.png" type="Texture" id=8]
 [ext_resource path="res://SpaceShips/shadee.jpg" type="Texture" id=9]
 [ext_resource path="res://Sounds/forgeSound.wav" type="AudioStream" id=10]
-[ext_resource path="res://Fonts/OriginTech personal use.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="PanoramaSky" id=3]
 panorama = ExtResource( 8 )
@@ -21,14 +20,6 @@ background_sky = SubResource( 3 )
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 9 )
-
-[sub_resource type="DynamicFont" id=5]
-size = 120
-outline_size = 5
-outline_color = Color( 0.0235294, 0, 1, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 11 )
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.223529, 0.792157, 0.866667, 1 )
@@ -76,31 +67,13 @@ spot_angle = 32.1895
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.26, -1.002, 0.179 )
 mesh = ExtResource( 5 )
 
-[node name="Label3D" type="Label3D" parent="planet_habitable"]
-transform = Transform( 1, 0, 0, 0, -0.0624595, 0.998048, 0, -0.998048, -0.0624595, 0.59198, 4.5185, -0.0954068 )
+[node name="Label3D" type="Label3D" parent="."]
 billboard = 1
-shaded = true
-double_sided = false
-render_priority = 50
-text = "RESUME"
-font = SubResource( 5 )
-autowrap = true
-width = 800.0
+text = "Label 3D"
 
 [node name="Planet 3" type="MeshInstance" parent="."]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.891419, -1.00448, -0.729384 )
 mesh = ExtResource( 6 )
-
-[node name="Label3D2" type="Label3D" parent="Planet 3"]
-transform = Transform( 1, 0, 0, 0, -0.0624595, 0.998048, 0, -0.998048, -0.0624595, 0.804747, 4.85297, 0.23453 )
-billboard = 1
-shaded = true
-double_sided = false
-render_priority = 50
-text = "PROJECTS"
-font = SubResource( 5 )
-autowrap = true
-width = 800.0
 
 [node name="Planet_Sandy" type="MeshInstance" parent="."]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.493876, -0.756577, -0.790955 )
