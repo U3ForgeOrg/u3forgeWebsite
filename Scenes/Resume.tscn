@@ -796,3 +796,4 @@ October 2018 - July 2019"
 autowrap = true
 
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/ColorRect/TextureButton" to="." method="_on_TextureButton_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/ColorRect/TextureButton2" to="." method="_on_TextureButton2_button_down"]

@@ -48,11 +48,16 @@ func _on_Mode_toggled(button_pressed):
 	if not button_pressed:
 		get_node("ColorRect").visible=true
 		get_node("MoveInstructions").visible=false
+		get_node("Land").visible=false
+		get_node("DownLogo").visible=false
+		get_node("DownLabel").visible=false
 		for obj in objToHide:
 			get_node(obj).visible=false
 	if button_pressed:
 		get_node("ColorRect").visible=false
 		get_node("MoveInstructions").visible=true
+		get_node("DownLogo").visible=true
+		get_node("DownLabel").visible=true
 		for obj in objToHide:
 			get_node(obj).visible=true
 
@@ -61,3 +66,7 @@ func _on_Mode_toggled(button_pressed):
 
 func _on_Land_button_down():
 	get_parent().get_node(sceneToLoad).visible=true
+
+
+func _on_ResumeBtn_button_down():
+	get_parent().get_node("Resume").visible=true
