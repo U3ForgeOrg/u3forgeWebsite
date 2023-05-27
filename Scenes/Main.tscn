@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://joystick/virtual_joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://SpaceShips/fighter1.obj" type="ArrayMesh" id=7]
 [ext_resource path="res://SpaceSkyBox/skybox1.png" type="Texture" id=8]
 [ext_resource path="res://SpaceShips/shadee.jpg" type="Texture" id=9]
+[ext_resource path="res://Scenes/Portfolio.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Photos/RESUME.png" type="Texture" id=11]
 [ext_resource path="res://Photos/PORTFOLIO.png" type="Texture" id=12]
 [ext_resource path="res://Photos/ME.png" type="Texture" id=13]
@@ -130,6 +131,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.54702, 0 )
 shape = SubResource( 8 )
 
 [node name="Resume" parent="." instance=ExtResource( 15 )]
+
+[node name="Portfolio" parent="." instance=ExtResource( 10 )]
 
 [connection signal="area_entered" from="SpaceShip/SpaceShip" to="SpaceShip" method="_on_SpaceShip_area_entered"]
 [connection signal="area_exited" from="SpaceShip/SpaceShip" to="SpaceShip" method="_on_SpaceShip_area_exited"]

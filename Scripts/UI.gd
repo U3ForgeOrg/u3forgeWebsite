@@ -8,6 +8,7 @@ func _ready():
 	get_node("ColorRect").visible=false
 	get_node("Land").visible=false
 	get_parent().get_node("Resume").visible=false
+	get_parent().get_node("Portfolio").visible=false
 	
 	var path="res://Scripts/detect_os.txt"
 	var jscode=load_text_file(path)
@@ -70,3 +71,11 @@ func _on_Land_button_down():
 
 func _on_ResumeBtn_button_down():
 	get_parent().get_node("Resume").visible=true
+
+
+func _on_PortfolioBtn_button_down():
+	get_parent().get_node("Portfolio").visible=true
+
+
+func _on_ContactBtn_button_down():
+	get_parent().get_node("Portfolio").visible=true

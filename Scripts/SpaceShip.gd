@@ -38,8 +38,10 @@ func _on_SpaceShip_area_entered(area):
 		uiScript.sceneToLoad="Resume"
 	if area.get_parent().name=="PortfolioPlanet":
 		landBtn.visible=true
+		uiScript.sceneToLoad="Portfolio"
 	if area.get_parent().name=="ContactPlanet":
 		landBtn.visible=true
+		uiScript.sceneToLoad="Portfolio"
 		
 
 

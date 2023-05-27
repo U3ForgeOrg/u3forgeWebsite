@@ -186,5 +186,7 @@ custom_fonts/font = SubResource( 4 )
 text = "Land on Planet"
 
 [connection signal="button_down" from="ColorRect/ResumeBtn" to="." method="_on_ResumeBtn_button_down"]
+[connection signal="button_down" from="ColorRect/PortfolioBtn" to="." method="_on_PortfolioBtn_button_down"]
+[connection signal="button_down" from="ColorRect/ContactBtn" to="." method="_on_ContactBtn_button_down"]
 [connection signal="toggled" from="Mode" to="." method="_on_Mode_toggled"]
 [connection signal="button_down" from="Land" to="." method="_on_Land_button_down"]
