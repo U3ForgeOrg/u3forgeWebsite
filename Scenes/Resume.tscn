@@ -85,7 +85,7 @@ scroll_vertical_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 margin_right = 720.0
-margin_bottom = 2368.0
+margin_bottom = 3342.0
 rect_min_size = Vector2( 720, 246 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -482,3 +482,181 @@ text = "Go to Portfolio"
 align = 1
 valign = 1
 autowrap = true
+
+[node name="EntryElement6" type="ColorRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 2372.0
+margin_right = 720.0
+margin_bottom = 3342.0
+rect_min_size = Vector2( 720, 970 )
+color = Color( 0.345098, 0.345098, 0.345098, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_right = 1.0
+margin_bottom = 44.0
+color = Color( 0.482353, 0.815686, 1, 0.619608 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement6/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "AWARDS & ACHIEVEMENTS"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_top = 0.048
+anchor_right = 1.0
+anchor_bottom = 0.048
+margin_top = 0.439999
+margin_bottom = 75.44
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "1st Place Winner, Secur’IT Cup Middle East Hackathon
+Kaspersky - 2020"
+align = 1
+autowrap = true
+
+[node name="Label3" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_left = 0.008
+anchor_top = 0.13
+anchor_right = 1.0
+anchor_bottom = 0.13
+margin_left = 0.24
+margin_top = -0.100006
+margin_bottom = 46.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Part of the team that developed the winning Project"
+autowrap = true
+
+[node name="Button" type="Button" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_left = 0.028
+anchor_top = 0.171
+anchor_right = 0.425
+anchor_bottom = 0.171
+margin_left = -1.16
+margin_top = 0.12999
+margin_bottom = 87.13
+custom_fonts/font = SubResource( 5 )
+text = "League Of Leets "
+
+[node name="ColorRect3" type="ColorRect" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_top = 0.278
+anchor_right = 1.01
+anchor_bottom = 0.278
+margin_top = 0.339966
+margin_right = -0.200012
+margin_bottom = 15.34
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Label4" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_top = 0.306
+anchor_right = 1.0
+anchor_bottom = 0.306
+margin_top = 0.179962
+margin_bottom = 75.18
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "1st Place Winner, Vodafone Innovation Hackathon
+Vodafone - 2019"
+align = 1
+autowrap = true
+
+[node name="Label5" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_left = 0.007
+anchor_top = 0.388
+anchor_right = 1.0
+anchor_bottom = 0.388
+margin_left = -0.04
+margin_top = -0.360016
+margin_right = -6.0
+margin_bottom = 113.64
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "For the project idea and prototype VSpor, a VR mobile app that can utilize the 5G technology to stream football matches Realtime in VR."
+autowrap = true
+
+[node name="ColorRect4" type="ColorRect" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_top = 0.515
+anchor_right = 1.01
+anchor_bottom = 0.515
+margin_top = 0.449951
+margin_right = -0.200012
+margin_bottom = 15.45
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_top = 0.539
+anchor_right = 1.0
+anchor_bottom = 0.539
+margin_top = 0.169983
+margin_bottom = 75.17
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "1st Place Winner, Egypt2030 Hackathon
+RiseUp - 2019"
+align = 1
+autowrap = true
+
+[node name="Label7" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_left = 0.007
+anchor_top = 0.621
+anchor_right = 1.0
+anchor_bottom = 0.621
+margin_left = -0.04
+margin_top = -0.370056
+margin_right = -6.0
+margin_bottom = 113.63
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "For the project idea and prototype Honna, a mobile app to empower women in the field of sports supporting the SDG of Gender Equality."
+autowrap = true
+
+[node name="ColorRect5" type="ColorRect" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_top = 0.748
+anchor_right = 1.01
+anchor_bottom = 0.748
+margin_top = 0.440002
+margin_right = -0.200012
+margin_bottom = 15.44
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Label8" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_top = 0.773
+anchor_right = 1.0
+anchor_bottom = 0.773
+margin_top = 0.189941
+margin_bottom = 75.1899
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "1st Place Winner, Secur’IT Cup Middle East Hackathon
+Kaspersky - 2020"
+align = 1
+autowrap = true
+
+[node name="Label9" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_left = 0.008
+anchor_top = 0.855
+anchor_right = 1.0
+anchor_bottom = 0.855
+margin_left = 0.24
+margin_top = -0.350037
+margin_bottom = 46.65
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Developer of the winning Project"
+autowrap = true
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/EntryElement6"]
+anchor_left = 0.028
+anchor_top = 0.896
+anchor_right = 0.664
+anchor_bottom = 0.896
+margin_left = -1.16
+margin_top = -0.120056
+margin_right = -0.0800171
+margin_bottom = 86.8799
+custom_fonts/font = SubResource( 5 )
+text = "wAReny Multiplayer AR Platform "
