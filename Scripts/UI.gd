@@ -1,9 +1,10 @@
 extends Control
 
 var res=Array()
-
+export var objToHide=Array()
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_node("ColorRect").visible=false
 	var path="res://Scripts/detect_os.txt"
 	var jscode=load_text_file(path)
 	#print(jscode)
@@ -37,3 +38,16 @@ func load_text_file(path):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Mode_toggled(button_pressed):
+	if not button_pressed:
+		get_node("ColorRect").visible=true
+		get_node("MoveInstructions").visible=false
+		for obj in objToHide:
+			get_node(obj).visible=false
+	if button_pressed:
+		get_node("ColorRect").visible=false
+		get_node("MoveInstructions").visible=true
+		for obj in objToHide:
+			get_node(obj).visible=true
