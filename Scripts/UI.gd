@@ -2,9 +2,13 @@ extends Control
 
 var res=Array()
 export var objToHide=Array()
+var sceneToLoad=""
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("ColorRect").visible=false
+	get_node("Land").visible=false
+	get_parent().get_node("Resume").visible=false
+	
 	var path="res://Scripts/detect_os.txt"
 	var jscode=load_text_file(path)
 	#print(jscode)
@@ -51,3 +55,9 @@ func _on_Mode_toggled(button_pressed):
 		get_node("MoveInstructions").visible=true
 		for obj in objToHide:
 			get_node(obj).visible=true
+
+
+
+
+func _on_Land_button_down():
+	get_parent().get_node(sceneToLoad).visible=true

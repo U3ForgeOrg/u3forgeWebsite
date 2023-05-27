@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://joystick/virtual_joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Photos/PORTFOLIO.png" type="Texture" id=12]
 [ext_resource path="res://Photos/ME.png" type="Texture" id=13]
 [ext_resource path="res://Photos/CONTACT.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Resume.tscn" type="PackedScene" id=15]
 
 [sub_resource type="PanoramaSky" id=3]
 panorama = ExtResource( 8 )
@@ -25,8 +26,20 @@ background_sky = SubResource( 3 )
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 9 )
 
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.207136, 0.211316, 0.195512 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 2.47587, 5.97809, 3.36118 )
+
+[sub_resource type="BoxShape" id=7]
+extents = Vector3( 3.07176, 7.2342, 2.72645 )
+
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.223529, 0.792157, 0.866667, 1 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 2.00069, 8.10657, 2.12011 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -46,7 +59,7 @@ spot_range = 7.56032
 spot_angle = 28.9631
 
 [node name="UI" parent="." instance=ExtResource( 2 )]
-objToHide = [ NodePath("../SpaceShip"), NodePath("../Planet 3"), NodePath("../Planet_Sandy"), NodePath("../planet_habitable"), NodePath("../Virtual joystick") ]
+objToHide = [ NodePath("../SpaceShip"), NodePath("../PortfolioPlanet"), NodePath("../ContactPlanet"), NodePath("../ResumePlanet"), NodePath("../Virtual joystick") ]
 
 [node name="Virtual joystick" parent="." instance=ExtResource( 1 )]
 action_left = "left"
@@ -68,31 +81,60 @@ light_indirect_energy = 0.0
 spot_range = 2.48895
 spot_angle = 32.1895
 
-[node name="planet_habitable" type="MeshInstance" parent="."]
+[node name="SpaceShip" type="Area" parent="SpaceShip"]
+transform = Transform( 0.582858, 0, 0, 0, 0.676198, 0, 0, 0, 0.464075, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SpaceShip/SpaceShip"]
+shape = SubResource( 6 )
+
+[node name="ResumePlanet" type="MeshInstance" parent="."]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.26, -1.002, 0.179 )
 mesh = ExtResource( 5 )
 
-[node name="Sprite3D" type="Sprite3D" parent="planet_habitable"]
+[node name="Sprite3D" type="Sprite3D" parent="ResumePlanet"]
 transform = Transform( 2.5, 0, 0, 0, -0.215498, 2.49069, 0, -2.49069, -0.215498, 0.381805, 5.34402, 0.0718596 )
 texture = ExtResource( 11 )
 
-[node name="Planet 3" type="MeshInstance" parent="."]
+[node name="Area" type="Area" parent="ResumePlanet"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105968, 7.9456, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ResumePlanet/Area"]
+shape = SubResource( 5 )
+
+[node name="PortfolioPlanet" type="MeshInstance" parent="."]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.891419, -1.00448, -0.729384 )
 mesh = ExtResource( 6 )
 
-[node name="Sprite3D2" type="Sprite3D" parent="Planet 3"]
+[node name="Sprite3D2" type="Sprite3D" parent="PortfolioPlanet"]
 transform = Transform( 2.5, 0, 0, 0, -0.215498, 2.49069, 0, -2.49069, -0.215498, 0.209745, 5.01336, 1.12268 )
 texture = ExtResource( 12 )
 
-[node name="Planet_Sandy" type="MeshInstance" parent="."]
+[node name="Area" type="Area" parent="PortfolioPlanet"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.51244, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="PortfolioPlanet/Area"]
+shape = SubResource( 7 )
+
+[node name="ContactPlanet" type="MeshInstance" parent="."]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.493876, -0.756577, -0.790955 )
 mesh = ExtResource( 4 )
 material/3 = SubResource( 4 )
 
-[node name="Sprite3D3" type="Sprite3D" parent="Planet_Sandy"]
+[node name="Sprite3D3" type="Sprite3D" parent="ContactPlanet"]
 transform = Transform( 2, 0, 0, 0, -0.172399, 1.99256, 0, -1.99256, -0.172399, 0.432793, 3.36104, -0.516696 )
 texture = ExtResource( 14 )
 
-[node name="Sprite3D4" type="Sprite3D" parent="Planet_Sandy"]
+[node name="Sprite3D4" type="Sprite3D" parent="ContactPlanet"]
 transform = Transform( 2, 0, 0, 0, -0.172399, 1.99256, 0, -1.99256, -0.172399, 0.432793, 3.51889, 1.30773 )
 texture = ExtResource( 13 )
+
+[node name="Area" type="Area" parent="ContactPlanet"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.54702, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ContactPlanet/Area"]
+shape = SubResource( 8 )
+
+[node name="Resume" parent="." instance=ExtResource( 15 )]
+
+[connection signal="area_entered" from="SpaceShip/SpaceShip" to="SpaceShip" method="_on_SpaceShip_area_entered"]
+[connection signal="area_exited" from="SpaceShip/SpaceShip" to="SpaceShip" method="_on_SpaceShip_area_exited"]
