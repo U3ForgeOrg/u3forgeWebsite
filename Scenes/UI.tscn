@@ -56,97 +56,116 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.443137 )
 
+[node name="UpLogo" type="TextureRect" parent="ColorRect"]
+anchor_left = 0.469
+anchor_top = 0.284
+anchor_right = 0.531
+anchor_bottom = 0.284
+margin_left = -0.480042
+margin_top = -184.876
+margin_right = 0.47998
+margin_bottom = 0.123993
+texture = ExtResource( 1 )
+expand = true
+
 [node name="Label2" type="Label" parent="ColorRect"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -342.0
-margin_top = 220.0
-margin_right = 339.0
-margin_bottom = 403.0
+anchor_left = 0.322
+anchor_top = 0.298
+anchor_right = 0.683
+anchor_bottom = 0.298
+margin_left = -0.240051
+margin_top = -0.222
+margin_right = 0.639893
+margin_bottom = 182.778
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_fonts/font = SubResource( 6 )
 text = "Welcome to the great Forge
 by
 AbdulRahman Yousry Mahrous"
 align = 1
-
-[node name="UpLogo" type="TextureRect" parent="ColorRect"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -60.0
-margin_top = 25.0
-margin_right = 60.0
-margin_bottom = 210.0
-texture = ExtResource( 1 )
-expand = true
+autowrap = true
 
 [node name="ResumeBtn" type="TextureButton" parent="ColorRect"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -207.0
-margin_top = 453.894
-margin_right = 207.0
-margin_bottom = 541.894
+anchor_left = 0.392
+anchor_top = 0.614
+anchor_right = 0.608
+anchor_bottom = 0.614
+margin_left = 0.359985
+margin_top = 0.14801
+margin_right = -0.360107
+margin_bottom = 88.148
+size_flags_horizontal = 15
+size_flags_vertical = 15
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 4 )
 texture_disabled = ExtResource( 4 )
 texture_focused = ExtResource( 4 )
+expand = true
 
 [node name="PortfolioBtn" type="TextureButton" parent="ColorRect"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -304.5
-margin_top = 524.958
-margin_right = 304.5
-margin_bottom = 612.958
+anchor_left = 0.341
+anchor_top = 0.71
+anchor_right = 0.659
+anchor_bottom = 0.71
+margin_left = 0.779968
+margin_top = 0.268005
+margin_right = -0.780029
+margin_bottom = 88.268
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 5 )
 texture_disabled = ExtResource( 5 )
 texture_focused = ExtResource( 5 )
+expand = true
 
 [node name="ContactBtn" type="TextureButton" parent="ColorRect"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -238.5
-margin_top = 599.858
-margin_right = 241.7
-margin_bottom = 687.858
+anchor_left = 0.376
+anchor_top = 0.812
+anchor_right = 0.626
+anchor_bottom = 0.812
+margin_left = -0.420044
+margin_top = -0.210083
+margin_right = -0.220093
+margin_bottom = 87.7899
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 6 )
 texture_disabled = ExtResource( 6 )
 texture_focused = ExtResource( 6 )
+expand = true
 
 [node name="DownLogo" type="TextureRect" parent="."]
-anchor_left = 1.0
+anchor_left = 0.916
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.961
 anchor_bottom = 1.0
-margin_left = -161.0
+margin_left = 0.279907
 margin_top = -165.0
-margin_right = -75.0
+margin_right = -0.119995
 margin_bottom = -32.0
 texture = ExtResource( 1 )
 expand = true
 
 [node name="DownLabel" type="Label" parent="."]
-anchor_left = 1.0
-anchor_top = 1.0
+anchor_left = 0.849
+anchor_top = 1.003
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -289.0
-margin_top = -29.0
+anchor_bottom = 1.003
+margin_left = 0.919922
+margin_top = -31.217
 margin_right = -3.0
-margin_bottom = 2.0
+margin_bottom = -0.217041
 custom_fonts/font = SubResource( 1 )
 text = "© AdbulRahman Yousry Mahrous"
 align = 2
 
 [node name="MoveInstructions" type="Label" parent="."]
+anchor_right = 0.106
 margin_left = 10.0
 margin_top = 51.688
-margin_right = 188.0
+margin_right = -15.52
 margin_bottom = 184.688
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
@@ -157,23 +176,26 @@ Joystick Below"
 autowrap = true
 
 [node name="Mode" type="CheckButton" parent="."]
+anchor_right = 0.125
 margin_left = 4.0
 margin_top = 9.0
-margin_right = 218.0
+margin_right = -22.0
 margin_bottom = 49.0
 rect_scale = Vector2( 1.1, 1.1 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
+size_flags_horizontal = 15
+size_flags_vertical = 15
 custom_fonts/font = SubResource( 5 )
 pressed = true
 text = "Game Mode"
 expand_icon = true
 
 [node name="Land" type="Button" parent="."]
-anchor_left = 1.0
+anchor_left = 0.893
 anchor_right = 1.0
-margin_left = -205.0
+margin_left = 0.439819
 margin_bottom = 73.0
+size_flags_horizontal = 15
+size_flags_vertical = 15
 custom_fonts/font = SubResource( 4 )
 text = "Land on Planet"
 
