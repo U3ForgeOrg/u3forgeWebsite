@@ -3,10 +3,12 @@ extends MeshInstance
 var resumePos=Vector3()
 var portPos=Vector3()
 var contPos=Vector3()
-onready var landBtn=get_parent().get_node("UI/Land")
-onready var uiScript=get_parent().get_node("UI")
+onready var landBtn=get_node("LandBtn")
+var sceneToLoad=""
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	landBtn.visible=false
+	
 	var w=get_parent().get_node("UI").res[0].to_int()
 	var h=get_parent().get_node("UI").res[1].to_int()
 	
@@ -35,15 +37,27 @@ func _process(delta):
 func _on_SpaceShip_area_entered(area):
 	if area.get_parent().name=="ResumePlanet":
 		landBtn.visible=true
-		uiScript.sceneToLoad="Resume"
+		sceneToLoad="Resume"
 	if area.get_parent().name=="PortfolioPlanet":
 		landBtn.visible=true
-		uiScript.sceneToLoad="Portfolio"
+		sceneToLoad="Portfolio"
 	if area.get_parent().name=="ContactPlanet":
 		landBtn.visible=true
-		uiScript.sceneToLoad="Portfolio"
+		sceneToLoad="Portfolio"
 		
 
 
 func _on_SpaceShip_area_exited(area):
 	landBtn.visible=false
+
+
+func _on_LandArea_input_event(camera, event, position, normal, shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index==BUTTON_LEFT and event.pressed==true:
+			get_parent().get_node(sceneToLoad).visible=true
+
+
+
+
+
+

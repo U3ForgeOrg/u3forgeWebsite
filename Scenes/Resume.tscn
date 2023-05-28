@@ -97,7 +97,6 @@ anchor_bottom = 1.0
 margin_bottom = -3.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-scroll_horizontal_enabled = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 margin_right = 1908.0
@@ -129,7 +128,7 @@ texture_disabled = ExtResource( 3 )
 expand = true
 stretch_mode = 4
 
-[node name="TextureButton2" type="TextureButton" parent="ScrollContainer/VBoxContainer/ColorRect"]
+[node name="PDFButton" type="TextureButton" parent="ScrollContainer/VBoxContainer/ColorRect"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -78.0
@@ -823,4 +822,4 @@ October 2018 - July 2019"
 autowrap = true
 
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/ColorRect/TextureButton" to="." method="_on_TextureButton_button_down"]
-[connection signal="button_down" from="ScrollContainer/VBoxContainer/ColorRect/TextureButton2" to="." method="_on_TextureButton2_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/ColorRect/PDFButton" to="." method="_on_PDFButton_button_down"]

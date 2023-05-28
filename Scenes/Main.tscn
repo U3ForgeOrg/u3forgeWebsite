@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://joystick/virtual_joystick.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/UI.tscn" type="PackedScene" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Photos/ME.png" type="Texture" id=13]
 [ext_resource path="res://Photos/CONTACT.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Resume.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Photos/SpaceShipLand.png" type="Texture" id=16]
+[ext_resource path="res://Photos/LAND.png" type="Texture" id=17]
 
 [sub_resource type="PanoramaSky" id=3]
 panorama = ExtResource( 8 )
@@ -28,6 +30,9 @@ albedo_texture = ExtResource( 9 )
 
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.207136, 0.211316, 0.195512 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 2.59337, 2.6716, 2.25263 )
 
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 2.47587, 5.97809, 3.36118 )
@@ -83,6 +88,22 @@ transform = Transform( 0.582858, 0, 0, 0, 0.676198, 0, 0, 0, 0.464075, 0, 0, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="SpaceShip/SpaceShip"]
 shape = SubResource( 6 )
 
+[node name="LandBtn" type="Sprite3D" parent="SpaceShip"]
+transform = Transform( 1.31134e-08, -0.1, 4.37114e-09, -3.82137e-16, 4.37114e-09, 0.1, -0.1, -1.31134e-08, 1.91069e-16, 1.19209e-07, 0.240651, -0.573465 )
+texture = ExtResource( 16 )
+
+[node name="Sprite3D" type="Sprite3D" parent="SpaceShip/LandBtn"]
+transform = Transform( 1, 0, -8.47033e-22, 0, 1, 0, -5.0822e-21, 0, 1, -0.0490618, -3.07315, 0 )
+texture = ExtResource( 17 )
+
+[node name="LandArea" type="Area" parent="SpaceShip/LandBtn"]
+transform = Transform( 1, -5.56362e-08, -6.25331e-15, 5.56362e-08, 1, 8.74228e-08, 1.38943e-15, -8.74228e-08, 1, 0, 0, 0 )
+input_capture_on_drag = true
+
+[node name="CollisionShape" type="CollisionShape" parent="SpaceShip/LandBtn/LandArea"]
+transform = Transform( 1, 0, -8.47033e-22, 0, 1, 0, -1.69407e-21, 0, 1, 0, -0.510855, 0 )
+shape = SubResource( 9 )
+
 [node name="ResumePlanet" type="MeshInstance" parent="."]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.26, -1.002, 0.179 )
 mesh = ExtResource( 5 )
@@ -136,3 +157,4 @@ shape = SubResource( 8 )
 
 [connection signal="area_entered" from="SpaceShip/SpaceShip" to="SpaceShip" method="_on_SpaceShip_area_entered"]
 [connection signal="area_exited" from="SpaceShip/SpaceShip" to="SpaceShip" method="_on_SpaceShip_area_exited"]
+[connection signal="input_event" from="SpaceShip/LandBtn/LandArea" to="SpaceShip" method="_on_LandArea_input_event"]

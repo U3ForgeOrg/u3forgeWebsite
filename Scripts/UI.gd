@@ -2,11 +2,10 @@ extends Control
 
 var res=Array()
 export var objToHide=Array()
-var sceneToLoad=""
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("ColorRect").visible=false
-	get_node("Land").visible=false
 	get_parent().get_node("Resume").visible=false
 	get_parent().get_node("Portfolio").visible=false
 	
@@ -49,7 +48,6 @@ func _on_Mode_toggled(button_pressed):
 	if not button_pressed:
 		get_node("ColorRect").visible=true
 		get_node("MoveInstructions").visible=false
-		get_node("Land").visible=false
 		get_node("DownLogo").visible=false
 		get_node("DownLabel").visible=false
 		for obj in objToHide:
@@ -65,8 +63,6 @@ func _on_Mode_toggled(button_pressed):
 
 
 
-func _on_Land_button_down():
-	get_parent().get_node(sceneToLoad).visible=true
 
 
 func _on_ResumeBtn_button_down():
