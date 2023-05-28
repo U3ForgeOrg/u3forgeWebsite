@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Fonts/Robofan Free.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Fonts/OriginTech personal use.ttf" type="DynamicFontData" id=2]
@@ -60,14 +60,6 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 32
-outline_color = Color( 0, 0.00784314, 1, 1 )
-use_mipmaps = true
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=8]
-size = 32
-outline_size = 1
 outline_color = Color( 0, 0.00784314, 1, 1 )
 use_mipmaps = true
 use_filter = true
@@ -396,15 +388,7 @@ margin_right = 0.0800171
 margin_bottom = 82.4999
 mouse_filter = 1
 custom_fonts/font = SubResource( 5 )
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement2/Button3"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 8 )
 text = "Rody AR Smart Learning"
-align = 1
-valign = 1
-autowrap = true
 
 [node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/EntryElement2"]
 anchor_left = 0.626
@@ -417,16 +401,7 @@ margin_right = -0.119995
 margin_bottom = 82.0499
 mouse_filter = 1
 custom_fonts/font = SubResource( 5 )
-
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement2/Button4"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/font = SubResource( 8 )
-text = "Knights of Light
-The Prologue "
-align = 1
-valign = 1
-autowrap = true
+text = "Knights of Light: The Prologue"
 
 [node name="EntryElement3" type="ColorRect" parent="ScrollContainer/VBoxContainer"]
 margin_top = 1772.0

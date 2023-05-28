@@ -142,6 +142,8 @@ margin_left = 0.279907
 margin_top = -165.0
 margin_right = -0.119873
 margin_bottom = -32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 1 )
 expand = true
 
@@ -159,11 +161,10 @@ text = "© AdbulRahman Yousry Mahrous"
 align = 2
 
 [node name="MoveInstructions" type="Label" parent="."]
-anchor_right = 0.106
 margin_left = 10.0
 margin_top = 52.0
-margin_right = 6.48
-margin_bottom = 209.0
+margin_right = 220.0
+margin_bottom = 276.0
 rect_min_size = Vector2( 200, 0 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
@@ -174,10 +175,9 @@ Joystick Below"
 autowrap = true
 
 [node name="Mode" type="CheckButton" parent="."]
-anchor_right = 0.125
 margin_left = 4.0
 margin_top = 9.0
-margin_right = -21.0
+margin_right = 219.0
 margin_bottom = 49.0
 rect_scale = Vector2( 1.1, 1.1 )
 size_flags_horizontal = 3
