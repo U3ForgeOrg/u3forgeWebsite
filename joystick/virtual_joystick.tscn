@@ -6,50 +6,42 @@
 
 [node name="Virtual joystick" type="Control"]
 modulate = Color( 1, 1, 1, 0.509804 )
-anchor_left = 0.09
 anchor_top = 1.0
-anchor_right = 0.194
 anchor_bottom = 1.0
-margin_left = 0.199997
-margin_top = -319.0
-margin_right = 0.519989
-margin_bottom = -119.0
-rect_min_size = Vector2( 200, 200 )
+margin_left = 39.0
+margin_top = -204.0
+margin_right = 189.0
+margin_bottom = -54.0
+rect_min_size = Vector2( 150, 150 )
 size_flags_horizontal = 7
 size_flags_vertical = 7
 script = ExtResource( 3 )
 
 [node name="Base" type="TextureRect" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -100.0
-margin_top = -100.0
-margin_right = 100.0
-margin_bottom = 100.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 200, 200 )
+rect_min_size = Vector2( 150, 150 )
 rect_pivot_offset = Vector2( 100, 100 )
 size_flags_horizontal = 7
 size_flags_vertical = 7
 texture = ExtResource( 1 )
 expand = true
-stretch_mode = 1
+stretch_mode = 6
 
 [node name="Tip" type="TextureRect" parent="Base"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -50.0
-margin_top = -50.0
-margin_right = 50.0
-margin_bottom = 50.0
+margin_left = -35.0
+margin_top = -35.0
+margin_right = 35.0
+margin_bottom = 35.0
 grow_horizontal = 2
 grow_vertical = 2
-rect_min_size = Vector2( 100, 100 )
+rect_min_size = Vector2( 70, 70 )
 rect_pivot_offset = Vector2( 50, 50 )
 size_flags_horizontal = 4
 size_flags_vertical = 4
