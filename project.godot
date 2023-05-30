@@ -28,9 +28,8 @@ config/icon="res://Photos/Transparent_rectangle.png"
 
 [display]
 
-window/size/width=1920
-window/size/height=739
-window/size/fullscreen=true
+window/size/width=720
+window/size/height=720
 window/size/test_width=378
 window/size/test_height=739
 window/dpi/allow_hidpi=true

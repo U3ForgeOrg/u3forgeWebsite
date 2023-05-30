@@ -151,9 +151,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.54702, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="ContactPlanet/Area"]
 shape = SubResource( 8 )
 
-[node name="Resume" parent="." instance=ExtResource( 15 )]
-
 [node name="Portfolio" parent="." instance=ExtResource( 10 )]
+
+[node name="Resume" parent="." instance=ExtResource( 15 )]
 
 [connection signal="area_entered" from="SpaceShip/SpaceShip" to="SpaceShip" method="_on_SpaceShip_area_entered"]
 [connection signal="area_exited" from="SpaceShip/SpaceShip" to="SpaceShip" method="_on_SpaceShip_area_exited"]

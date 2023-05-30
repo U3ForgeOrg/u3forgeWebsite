@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Photos/U3Forge@4x.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/UI.gd" type="Script" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://Photos/RESUME.png" type="Texture" id=4]
 [ext_resource path="res://Photos/PORTFOLIO.png" type="Texture" id=5]
 [ext_resource path="res://Photos/CONTACT.png" type="Texture" id=6]
+[ext_resource path="res://Photos/ResumeScreenshot.PNG" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=6]
-size = 46
+size = 17
 outline_size = 2
 outline_color = Color( 0, 0.00784314, 1, 1 )
 use_mipmaps = true
@@ -16,7 +17,7 @@ use_filter = true
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=1]
-size = 18
+size = 10
 outline_size = 2
 outline_color = Color( 0, 0.00784314, 1, 1 )
 use_mipmaps = true
@@ -24,14 +25,13 @@ use_filter = true
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 24
 outline_color = Color( 0, 0.00784314, 1, 1 )
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 24
+size = 20
 outline_size = 1
 outline_color = Color( 1, 0, 0, 1 )
 use_mipmaps = true
@@ -51,29 +51,29 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 0.443137 )
 
 [node name="UpLogo" type="TextureRect" parent="ColorRect"]
-anchor_left = 0.469
+anchor_left = 0.46
 anchor_top = 0.284
-anchor_right = 0.531
+anchor_right = 0.54
 anchor_bottom = 0.284
-margin_left = -0.480042
-margin_top = -184.876
-margin_right = 0.47998
-margin_bottom = 0.123993
+margin_left = -0.200012
+margin_top = -94.48
+margin_right = 0.199982
+margin_bottom = -1.48001
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 1 )
 expand = true
-stretch_mode = 1
+stretch_mode = 6
 
 [node name="Label2" type="Label" parent="ColorRect"]
 anchor_left = 0.322
 anchor_top = 0.298
 anchor_right = 0.683
 anchor_bottom = 0.298
-margin_left = -0.240051
-margin_top = -0.222
-margin_right = 0.639893
-margin_bottom = 182.778
+margin_left = 0.160004
+margin_top = -0.560013
+margin_right = 1.23999
+margin_bottom = 85.44
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 6 )
@@ -84,78 +84,101 @@ align = 1
 autowrap = true
 
 [node name="ResumeBtn" type="TextureButton" parent="ColorRect"]
-anchor_left = 0.392
-anchor_top = 0.614
-anchor_right = 0.608
-anchor_bottom = 0.614
-margin_left = 0.359985
-margin_top = 0.14801
-margin_right = -0.360107
-margin_bottom = 88.148
-size_flags_horizontal = 15
-size_flags_vertical = 15
+anchor_left = 0.007
+anchor_top = 0.482
+anchor_right = 0.318
+anchor_bottom = 0.482
+margin_left = -0.04
+margin_top = -0.0400085
+margin_right = 0.0399933
+margin_bottom = 77.96
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 4 )
 texture_hover = ExtResource( 4 )
 texture_disabled = ExtResource( 4 )
 texture_focused = ExtResource( 4 )
 expand = true
+stretch_mode = 5
+
+[node name="ResumeScreenshot" type="TextureButton" parent="ColorRect/ResumeBtn"]
+anchor_left = 0.161
+anchor_top = 0.834
+anchor_right = 0.826
+anchor_bottom = 0.834
+margin_left = -0.064003
+margin_top = 0.947998
+margin_right = -0.0240021
+margin_bottom = 247.948
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 7 )
+texture_focused = ExtResource( 7 )
+expand = true
+stretch_mode = 5
 
 [node name="PortfolioBtn" type="TextureButton" parent="ColorRect"]
-anchor_left = 0.341
-anchor_top = 0.71
-anchor_right = 0.659
-anchor_bottom = 0.71
-margin_left = 0.779968
-margin_top = 0.268005
-margin_right = -0.780029
-margin_bottom = 88.268
+anchor_left = 0.286
+anchor_top = 0.481
+anchor_right = 0.708
+anchor_bottom = 0.481
+margin_left = -1.92001
+margin_top = -0.320038
+margin_right = 0.23999
+margin_bottom = 76.68
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 5 )
 texture_hover = ExtResource( 5 )
 texture_disabled = ExtResource( 5 )
 texture_focused = ExtResource( 5 )
 expand = true
+stretch_mode = 5
 
 [node name="ContactBtn" type="TextureButton" parent="ColorRect"]
-anchor_left = 0.376
-anchor_top = 0.812
-anchor_right = 0.626
-anchor_bottom = 0.812
-margin_left = -0.420044
-margin_top = -0.210083
-margin_right = -0.220093
-margin_bottom = 87.7899
+anchor_left = 0.694
+anchor_top = 0.48
+anchor_right = 0.993
+anchor_bottom = 0.48
+margin_left = 0.320007
+margin_top = 14.4
+margin_right = 0.039978
+margin_bottom = 62.4
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 6 )
 texture_hover = ExtResource( 6 )
 texture_disabled = ExtResource( 6 )
 texture_focused = ExtResource( 6 )
 expand = true
+stretch_mode = 5
 
 [node name="DownLogo" type="TextureRect" parent="."]
-anchor_left = 0.916
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.961
+anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 0.279907
-margin_top = -165.0
-margin_right = -0.119873
-margin_bottom = -32.0
+margin_left = -90.0
+margin_top = -83.0
+margin_right = -58.0
+margin_bottom = -28.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 1 )
 expand = true
+stretch_mode = 6
 
 [node name="DownLabel" type="Label" parent="."]
-anchor_left = 0.849
+anchor_left = 1.0
 anchor_top = 1.003
 anchor_right = 1.0
 anchor_bottom = 1.003
-margin_left = 0.920044
-margin_top = -31.217
+margin_left = -168.0
+margin_top = -26.16
 margin_right = -4.0
-margin_bottom = -0.217041
+margin_bottom = -7.16003
 custom_fonts/font = SubResource( 1 )
 text = "© AdbulRahman Yousry Mahrous"
 align = 2
@@ -163,9 +186,8 @@ align = 2
 [node name="MoveInstructions" type="Label" parent="."]
 margin_left = 10.0
 margin_top = 52.0
-margin_right = 220.0
-margin_bottom = 276.0
-rect_min_size = Vector2( 200, 0 )
+margin_right = 165.0
+margin_bottom = 157.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Move with 
@@ -177,7 +199,7 @@ autowrap = true
 [node name="Mode" type="CheckButton" parent="."]
 margin_left = 4.0
 margin_top = 9.0
-margin_right = 219.0
+margin_right = 200.0
 margin_bottom = 49.0
 rect_scale = Vector2( 1.1, 1.1 )
 size_flags_horizontal = 3
@@ -188,6 +210,7 @@ text = "Game Mode"
 expand_icon = true
 
 [connection signal="button_down" from="ColorRect/ResumeBtn" to="." method="_on_ResumeBtn_button_down"]
+[connection signal="button_down" from="ColorRect/ResumeBtn/ResumeScreenshot" to="." method="_on_ResumeBtn_button_down"]
 [connection signal="button_down" from="ColorRect/PortfolioBtn" to="." method="_on_PortfolioBtn_button_down"]
 [connection signal="button_down" from="ColorRect/ContactBtn" to="." method="_on_ContactBtn_button_down"]
 [connection signal="toggled" from="Mode" to="." method="_on_Mode_toggled"]
