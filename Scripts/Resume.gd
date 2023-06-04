@@ -1,7 +1,7 @@
 extends Control
 
 onready var ui=get_parent().get_node("UI")
-onready var jscode=ui.load_text_file("res://Scripts/openWindow.js")
+onready var jscode=ui.load_text_file("res://Scripts/openWindow.txt")
 func _on_TextureButton_button_down():
 	get_parent().get_node("UI").show_hide_obj(true)
 	visible=false
