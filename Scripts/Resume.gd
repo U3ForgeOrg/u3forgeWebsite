@@ -15,7 +15,7 @@ func _on_PDFButton_button_down():
 
 
 func _on_desc_button_down(extra_arg_0, extra_arg_1):
-	var functionCall="openSubTab('"+extra_arg_0+"', '"+extra_arg_1+"');"
+	var functionCall="openWindow('"+extra_arg_0+"', '"+extra_arg_1+"');"
 	var out = JavaScript.eval(jscode+functionCall)
 
 
@@ -24,5 +24,5 @@ func _on_portfolio_button_down():
 
 
 func _on_vid_button_down(extra_arg_0, extra_arg_1, extra_arg_2):
-	var functionCall="openSubTabVideo('"+extra_arg_0+"', '"+extra_arg_1+"','"+extra_arg_2+"');"
+	var functionCall="openWindowWithVideo('"+extra_arg_0+"', '"+extra_arg_1+"','"+extra_arg_2+"');"
 	var out = JavaScript.eval(jscode+functionCall)

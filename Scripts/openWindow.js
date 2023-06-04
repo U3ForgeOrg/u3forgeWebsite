@@ -1,6 +1,6 @@
-function openSubTab(title, description) {
-  var subTab = window.open('', '_blank');
-  subTab.document.write(`
+function openWindow(title, description) {
+  var win = window.open("", "_blank", "width=400,height=300");
+  win.document.write(`
     <html>
     <head>
       <title>${title}</title>
@@ -12,6 +12,7 @@ function openSubTab(title, description) {
         }
         h1 {
           text-align: center;
+          color: #000000;
         }
         p {
           text-align: center;
@@ -25,11 +26,11 @@ function openSubTab(title, description) {
     </body>
     </html>
   `);
-  subTab.document.close();
+  win.document.close();
 }
-function openSubTabVideo(title, description, videoId) {
-  var subTab = window.open('', '_blank');
-  subTab.document.write(`
+function openWindowWithVideo(title, description, videoId) {
+  var win = window.open("", "_blank", "width=560,height=400");
+  win.document.write(`
     <html>
     <head>
       <title>${title}</title>
@@ -41,6 +42,7 @@ function openSubTabVideo(title, description, videoId) {
         }
         h1 {
           text-align: center;
+          color: #000000;
         }
         p {
           text-align: center;
@@ -73,5 +75,5 @@ function openSubTabVideo(title, description, videoId) {
     </body>
     </html>
   `);
-  subTab.document.close();
+  win.document.close();
 }
