@@ -2,12 +2,13 @@ extends Control
 
 var res=Array()
 export var objToHide=Array()
-
+onready var mode=get_node("Mode")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("ColorRect").visible=false
 	get_parent().get_node("Resume").visible=false
 	get_parent().get_node("Portfolio").visible=false
+	get_parent().get_node("Contact").visible=false
 	
 	var path="res://Scripts/detect_os.txt"
 	var jscode=load_text_file(path)
@@ -67,11 +68,18 @@ func _on_Mode_toggled(button_pressed):
 
 func _on_ResumeBtn_button_down():
 	get_parent().get_node("Resume").visible=true
-
+	show_hide_obj(false)
 
 func _on_PortfolioBtn_button_down():
 	get_parent().get_node("Portfolio").visible=true
-
+	show_hide_obj(false)
 
 func _on_ContactBtn_button_down():
-	get_parent().get_node("Portfolio").visible=true
+	get_parent().get_node("Contact").visible=true
+	show_hide_obj(false)
+
+func show_hide_obj(show):
+	for obj in objToHide:
+		get_node(obj).visible=show and mode.pressed
+	visible=show
+

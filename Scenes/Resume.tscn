@@ -89,10 +89,13 @@ anchor_bottom = 1.0
 margin_bottom = -3.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+scroll_horizontal_enabled = false
+scroll_vertical = 3415
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_top = -3415.0
 margin_right = 720.0
-margin_bottom = 4298.0
+margin_bottom = 883.0
 rect_min_size = Vector2( 720, 246 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -105,12 +108,13 @@ mouse_filter = 2
 color = Color( 0.482353, 0.815686, 1, 0.619608 )
 
 [node name="TextureButton" type="TextureButton" parent="ScrollContainer/VBoxContainer/ColorRect"]
-anchor_left = 0.867
-anchor_right = 0.867
-margin_left = -64.2401
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.016
+margin_left = -160.0
 margin_top = 1.0
-margin_right = -0.240051
-margin_bottom = 65.0
+margin_right = -96.0001
+margin_bottom = 63.976
 rect_min_size = Vector2( 64, 64 )
 mouse_filter = 1
 texture_normal = ExtResource( 3 )
@@ -528,7 +532,7 @@ valign = 1
 autowrap = true
 uppercase = true
 
-[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/EntryElement5"]
+[node name="portfolio" type="Button" parent="ScrollContainer/VBoxContainer/EntryElement5"]
 anchor_left = 0.028
 anchor_top = 0.356
 anchor_right = 0.964
@@ -540,7 +544,7 @@ margin_bottom = 87.04
 mouse_filter = 1
 custom_fonts/font = SubResource( 5 )
 
-[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement5/Button3"]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/EntryElement5/portfolio"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 9 )
@@ -819,3 +823,10 @@ autowrap = true
 
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/ColorRect/TextureButton" to="." method="_on_TextureButton_button_down"]
 [connection signal="button_down" from="ScrollContainer/VBoxContainer/ColorRect/PDFButton" to="." method="_on_PDFButton_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/EntryElement2/Button" to="." method="_on_desc_button_down" binds= [ "Atlantis Heroes", "Made with Unreal Engine. Multiplayer Stylized fighting game. I am responsible for the development of Characters Skills, Abilities, UI and Backend Authentication." ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/EntryElement2/Button2" to="." method="_on_desc_button_down" binds= [ "Kingdom Sports", "Made with Unreal Engine. Multiplayer street football sports game 4 VS 4. I am responsible for the development of football shooting , UI and Backend Authentication." ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/EntryElement2/Button3" to="." method="_on_vid_button_down" binds= [ "Rody AR Smart Learning ", "Worked on programming the AR animals behavior, programming the UI and publishing the game to Android. It is an interactive AR educational game developed using Unity Game Engine.", "Shy6yw716Vw" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/EntryElement2/Button4" to="." method="_on_vid_button_down" binds= [ "Knights of Light: The Prologue ", "Made with Unreal Engine. Worked on building the battle system and AI enemy soldiers in the game. It is a game that covers the great historical battle of Al-Qadiseiya that occurred at Iraq in the 7th century.", "rgxDXgq5MVc" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/EntryElement5/portfolio" to="." method="_on_portfolio_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/EntryElement6/Button" to="." method="_on_vid_button_down" binds= [ "League Of Leets ", "Programmed the gameplay and the UI. It is a Security Awareness Card Game inspired from GWENT the known Witcher Card Game MAde with Unity", "cbuIgAUcZcM" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/EntryElement6/Button2" to="." method="_on_vid_button_down" binds= [ "•wAReny Multiplayer AR Platform", "A Social augmented reality platform that helps you design, build & share your own 3D models. Made with Unity", "QuSdWE6ZNUE" ]]

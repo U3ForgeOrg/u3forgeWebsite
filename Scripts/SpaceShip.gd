@@ -43,7 +43,7 @@ func _on_SpaceShip_area_entered(area):
 		sceneToLoad="Portfolio"
 	if area.get_parent().name=="ContactPlanet":
 		landBtn.visible=true
-		sceneToLoad="Portfolio"
+		sceneToLoad="Contact"
 		
 
 
@@ -55,6 +55,7 @@ func _on_LandArea_input_event(camera, event, position, normal, shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index==BUTTON_LEFT and event.pressed==true:
 			get_parent().get_node(sceneToLoad).visible=true
+			get_parent().get_node("UI").show_hide_obj(false)
 
 
 

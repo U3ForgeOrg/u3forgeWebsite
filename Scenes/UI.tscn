@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Photos/U3Forge@4x.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/UI.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Photos/PORTFOLIO.png" type="Texture" id=5]
 [ext_resource path="res://Photos/CONTACT.png" type="Texture" id=6]
 [ext_resource path="res://Photos/ResumeScreenshot.PNG" type="Texture" id=7]
+[ext_resource path="res://Photos/PortfolioScreenshot.PNG" type="Texture" id=8]
+[ext_resource path="res://Photos/ContactScreenshot.PNG" type="Texture" id=9]
 
 [sub_resource type="DynamicFont" id=6]
 size = 17
@@ -121,6 +123,44 @@ texture_focused = ExtResource( 7 )
 expand = true
 stretch_mode = 5
 
+[node name="PortfolioScreenshot" type="TextureButton" parent="ColorRect/ResumeBtn"]
+anchor_left = 1.223
+anchor_top = 0.834
+anchor_right = 1.888
+anchor_bottom = 0.846
+margin_left = 0.0480042
+margin_top = 0.947998
+margin_right = 0.0880127
+margin_bottom = 247.012
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
+texture_disabled = ExtResource( 8 )
+texture_focused = ExtResource( 8 )
+expand = true
+stretch_mode = 5
+
+[node name="ContactScreenshot" type="TextureButton" parent="ColorRect/ResumeBtn"]
+anchor_left = 2.397
+anchor_top = 0.846
+anchor_right = 3.063
+anchor_bottom = 0.846
+margin_left = 0.0720215
+margin_top = 0.012001
+margin_right = -0.112
+margin_bottom = 247.012
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 9 )
+texture_disabled = ExtResource( 9 )
+texture_focused = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
 [node name="PortfolioBtn" type="TextureButton" parent="ColorRect"]
 anchor_left = 0.286
 anchor_top = 0.481
@@ -211,6 +251,8 @@ expand_icon = true
 
 [connection signal="button_down" from="ColorRect/ResumeBtn" to="." method="_on_ResumeBtn_button_down"]
 [connection signal="button_down" from="ColorRect/ResumeBtn/ResumeScreenshot" to="." method="_on_ResumeBtn_button_down"]
+[connection signal="button_down" from="ColorRect/ResumeBtn/PortfolioScreenshot" to="." method="_on_PortfolioBtn_button_down"]
+[connection signal="button_down" from="ColorRect/ResumeBtn/ContactScreenshot" to="." method="_on_ContactBtn_button_down"]
 [connection signal="button_down" from="ColorRect/PortfolioBtn" to="." method="_on_PortfolioBtn_button_down"]
 [connection signal="button_down" from="ColorRect/ContactBtn" to="." method="_on_ContactBtn_button_down"]
 [connection signal="toggled" from="Mode" to="." method="_on_Mode_toggled"]

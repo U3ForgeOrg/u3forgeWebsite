@@ -1,8 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=15 format=2]
 
+[ext_resource path="res://Photos/UnityEngine.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/OriginTech personal use.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Photos/Home.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/Resume.gd" type="Script" id=5]
+[ext_resource path="res://Photos/UEEngine.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/Portfolio.gd" type="Script" id=5]
+[ext_resource path="res://Fonts/Robofan Free.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://Photos/GodotIcon.png" type="Texture" id=7]
+[ext_resource path="res://Photos/Download.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -10,6 +15,44 @@ outline_size = 2
 use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 18
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+outline_size = 2
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+outline_size = 3
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 18
+outline_color = Color( 0, 0.00784314, 1, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 14
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 6 )
 
 [node name="Portfolio" type="Control"]
 anchor_right = 1.0
@@ -27,10 +70,13 @@ anchor_bottom = 1.0
 margin_bottom = -3.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+scroll_horizontal_enabled = false
+scroll_vertical = 337
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+margin_top = -337.0
 margin_right = 720.0
-margin_bottom = 1277.0
+margin_bottom = 2037.0
 rect_min_size = Vector2( 720, 246 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -41,12 +87,12 @@ margin_bottom = 64.0
 rect_min_size = Vector2( 0, 64 )
 color = Color( 0.482353, 0.815686, 1, 0.619608 )
 
-[node name="TextureButton" type="TextureButton" parent="ScrollContainer/VBoxContainer/ColorRect"]
-anchor_left = 0.867
-anchor_right = 0.867
-margin_left = -64.2401
+[node name="Home" type="TextureButton" parent="ScrollContainer/VBoxContainer/ColorRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -160.0
 margin_top = 1.0
-margin_right = -0.240051
+margin_right = -96.0001
 margin_bottom = 65.0
 rect_min_size = Vector2( 64, 64 )
 texture_normal = ExtResource( 3 )
@@ -56,14 +102,1648 @@ texture_disabled = ExtResource( 3 )
 expand = true
 stretch_mode = 4
 
+[node name="PDFButton" type="TextureButton" parent="ScrollContainer/VBoxContainer/ColorRect"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -78.0
+margin_right = -14.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+mouse_filter = 1
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 8 )
+texture_disabled = ExtResource( 8 )
+expand = true
+stretch_mode = 4
+
 [node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/ColorRect"]
 margin_left = 13.0
 margin_right = 527.0
 margin_bottom = 64.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "UNDER CONSTRUCTION"
+text = "PORTFOLIO"
 valign = 1
 autowrap = true
 
-[connection signal="button_down" from="ScrollContainer/VBoxContainer/ColorRect/TextureButton" to="." method="_on_TextureButton_button_down"]
+[node name="Spacer" type="ColorRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 68.0
+margin_right = 720.0
+margin_bottom = 88.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="Filter" type="ScrollContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 92.0
+margin_right = 720.0
+margin_bottom = 142.0
+rect_min_size = Vector2( 0, 50 )
+mouse_filter = 1
+scroll_vertical_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/Filter"]
+margin_right = 1022.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 710, 30 )
+
+[node name="UE" type="CheckBox" parent="ScrollContainer/VBoxContainer/Filter/HBoxContainer"]
+margin_right = 170.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 170, 30 )
+mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+pressed = true
+text = "Unreal Engine"
+icon = ExtResource( 4 )
+expand_icon = true
+
+[node name="Unity" type="CheckBox" parent="ScrollContainer/VBoxContainer/Filter/HBoxContainer"]
+margin_left = 174.0
+margin_right = 344.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 170, 30 )
+mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+pressed = true
+text = "Unity Engine"
+icon = ExtResource( 1 )
+expand_icon = true
+
+[node name="Godot" type="CheckBox" parent="ScrollContainer/VBoxContainer/Filter/HBoxContainer"]
+margin_left = 348.0
+margin_right = 518.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 170, 30 )
+mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+pressed = true
+text = "Godot Engine"
+icon = ExtResource( 7 )
+expand_icon = true
+
+[node name="AR" type="CheckBox" parent="ScrollContainer/VBoxContainer/Filter/HBoxContainer"]
+margin_left = 522.0
+margin_right = 575.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 50, 30 )
+mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+pressed = true
+text = "AR"
+expand_icon = true
+
+[node name="VR" type="CheckBox" parent="ScrollContainer/VBoxContainer/Filter/HBoxContainer"]
+margin_left = 579.0
+margin_right = 632.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 50, 30 )
+mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+pressed = true
+text = "VR"
+expand_icon = true
+
+[node name="C++" type="CheckBox" parent="ScrollContainer/VBoxContainer/Filter/HBoxContainer"]
+margin_left = 636.0
+margin_right = 699.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 60, 30 )
+mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+pressed = true
+text = "C++"
+expand_icon = true
+
+[node name="C#" type="CheckBox" parent="ScrollContainer/VBoxContainer/Filter/HBoxContainer"]
+margin_left = 703.0
+margin_right = 757.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 50, 30 )
+mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+pressed = true
+text = "C#"
+expand_icon = true
+
+[node name="Python" type="CheckBox" parent="ScrollContainer/VBoxContainer/Filter/HBoxContainer"]
+margin_left = 761.0
+margin_right = 851.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 80, 30 )
+mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+pressed = true
+text = "Python"
+expand_icon = true
+
+[node name="AI" type="CheckBox" parent="ScrollContainer/VBoxContainer/Filter/HBoxContainer"]
+margin_left = 855.0
+margin_right = 905.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 50, 30 )
+mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+pressed = true
+text = "AI"
+expand_icon = true
+
+[node name="Education" type="CheckBox" parent="ScrollContainer/VBoxContainer/Filter/HBoxContainer"]
+margin_left = 909.0
+margin_right = 1022.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 100, 30 )
+mouse_filter = 1
+custom_fonts/font = SubResource( 2 )
+pressed = true
+text = "Education"
+expand_icon = true
+
+[node name="Spacer2" type="ColorRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 146.0
+margin_right = 720.0
+margin_bottom = 166.0
+rect_min_size = Vector2( 0, 20 )
+color = Color( 1, 1, 1, 0 )
+
+[node name="UnrealHeader" type="ColorRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 170.0
+margin_right = 720.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 0, 50 )
+mouse_filter = 2
+color = Color( 0.482353, 0.815686, 1, 0.619608 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/UnrealHeader"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Unreal Engine Projects"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Unreal" type="ScrollContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 224.0
+margin_right = 720.0
+margin_bottom = 536.0
+rect_min_size = Vector2( 0, 100 )
+mouse_filter = 1
+scroll_horizontal = 100
+scroll_vertical_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/Unreal"]
+margin_left = -100.0
+margin_right = 1139.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 720, 300 )
+alignment = 1
+
+[node name="Element" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Atlantis Heroes"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 230.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Multiplayer Stylized fighting game.
+I am responsible for the development of Characters Skills, Abilities, UI and Backend Authentication."
+align = 1
+autowrap = true
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer"]
+margin_left = 304.0
+margin_right = 309.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element2" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer"]
+margin_left = 313.0
+margin_right = 613.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Kingdom Sports"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element2"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 230.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Multiplayer street football sports game 4 VS 4. 
+I am responsible for the development of football shooting , UI and Backend Authentication."
+align = 1
+autowrap = true
+
+[node name="ColorRect2" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer"]
+margin_left = 617.0
+margin_right = 622.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element3" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer"]
+margin_left = 626.0
+margin_right = 926.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Knights of Light: 
+The Prologue"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element3"]
+anchor_left = 0.017
+anchor_top = 0.313
+anchor_right = 1.0
+anchor_bottom = 0.313
+margin_left = -0.1
+margin_top = 0.0999908
+margin_right = 1.0
+margin_bottom = 153.1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Worked on building the battle system and AI enemy soldiers. 
+It is a game that covers the great historical battle of Al-Qadiseiya that occurred at Iraq in the 7th century."
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element3"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -45.0
+margin_right = 103.0
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View in store"
+
+[node name="Video" type="Button" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element3"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -106.0
+margin_top = -45.0
+margin_right = -9.0
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "Watch Video"
+
+[node name="ColorRect3" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer"]
+margin_left = 930.0
+margin_right = 935.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element4" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer"]
+margin_left = 939.0
+margin_right = 1239.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element4"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Wa3y - Cyber Security Awareness Game"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element4"]
+anchor_left = 0.017
+anchor_top = 0.313
+anchor_right = 1.0
+anchor_bottom = 0.313
+margin_left = -0.1
+margin_top = 0.0999908
+margin_right = 1.0
+margin_bottom = 153.1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Wa3y is a game that simulates security attacks raising awareness on how to avoid and defend from them in a fun and gamified way"
+align = 1
+autowrap = true
+
+[node name="Video" type="Button" parent="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element4"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -48.5
+margin_top = -45.0
+margin_right = 48.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "Watch Video"
+
+[node name="UnityHeader" type="ColorRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 540.0
+margin_right = 720.0
+margin_bottom = 590.0
+rect_min_size = Vector2( 0, 50 )
+mouse_filter = 2
+color = Color( 0.482353, 0.815686, 1, 0.619608 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/UnityHeader"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Unity Engine Projects"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Unity" type="ScrollContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 594.0
+margin_right = 720.0
+margin_bottom = 906.0
+rect_min_size = Vector2( 0, 100 )
+mouse_filter = 1
+scroll_horizontal = 1145
+scroll_vertical_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/Unity"]
+margin_left = -1145.0
+margin_right = 720.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 720, 300 )
+alignment = 1
+
+[node name="RodyAR" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer" groups=["AR"]]
+margin_right = 300.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/RodyAR"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Rody AR Smart Learning"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/RodyAR"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 178.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Worked on programming the AR animals behavior, programming the UI and publishing the game to Android and iOS. 
+It is an interactive AR educational game developed using Unity Game Engine."
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/RodyAR"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = -45.0
+margin_right = 103.0
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View in store"
+
+[node name="Video" type="Button" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/RodyAR"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -106.0
+margin_top = -45.0
+margin_right = -9.0
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "Watch Video"
+
+[node name="RodySep" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer" groups=["AR"]]
+margin_left = 304.0
+margin_right = 309.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="wARenyAR" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer" groups=["AR"]]
+margin_left = 313.0
+margin_right = 613.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/wARenyAR"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "wAReny Multiplayer AR Platform"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/wARenyAR"]
+anchor_left = 0.017
+anchor_top = 0.313
+anchor_right = 1.0
+anchor_bottom = 0.313
+margin_left = -0.1
+margin_top = 0.0999908
+margin_right = 1.0
+margin_bottom = 144.1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "A Social augmented reality platform that helps you design, build & share your own 3D models"
+align = 1
+autowrap = true
+
+[node name="Video" type="Button" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/wARenyAR"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -48.5
+margin_top = -45.0
+margin_right = 48.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "Watch Video"
+
+[node name="wARenySep" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer" groups=["AR"]]
+margin_left = 617.0
+margin_right = 622.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="VRMedical" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer" groups=["VR"]]
+margin_left = 626.0
+margin_right = 926.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/VRMedical"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "VR Medical Project"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/VRMedical"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 175.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Designed and Developed a Medical VR application for Oculus Rift Based on a Research by a doctor called Moatsem on how effective is Therapy in helping curing Type 1 diabetes"
+align = 1
+autowrap = true
+
+[node name="VRMedicalSep" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer" groups=["VR"]]
+margin_left = 930.0
+margin_right = 935.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="VRRes" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer" groups=["VR"]]
+margin_left = 939.0
+margin_right = 1239.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/VRRes"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "VR Real-estate Compound View Project"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/VRRes"]
+anchor_left = 0.017
+anchor_top = 0.313
+anchor_right = 1.003
+anchor_bottom = 0.313
+margin_left = -0.1
+margin_top = 0.0999908
+margin_right = 0.100006
+margin_bottom = 176.1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Designed and Developed a VR application for viewing a Real-estate Compound including navigation inside and outside the Compound Villas for Oculus Rift with the company VRteek"
+align = 1
+autowrap = true
+
+[node name="VRResSep" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer" groups=["VR"]]
+margin_left = 1243.0
+margin_right = 1248.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Zeq" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer"]
+margin_left = 1252.0
+margin_right = 1552.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/Zeq"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Zequense Card Game"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/Zeq"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 214.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Part of the team the developed Zequense a 2D Multiplayer Card Game using Photon. I was responsible for the UI programming, Voice chat integration using Agora and PlayFab backend operations like Authentication and Leaderboards"
+align = 1
+autowrap = true
+
+[node name="ZeqSep" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer"]
+margin_left = 1556.0
+margin_right = 1561.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="LOL" type="ColorRect" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer"]
+margin_left = 1565.0
+margin_right = 1865.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/LOL"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "League Of Leets"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/LOL"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 163.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Programmed the gameplay and the UI. 
+It is a Security Awareness Card Game inspired from GWENT the known Witcher Card Game"
+align = 1
+autowrap = true
+
+[node name="Video" type="Button" parent="ScrollContainer/VBoxContainer/Unity/HBoxContainer/LOL"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -48.5
+margin_top = -45.0
+margin_right = 48.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "Watch Video"
+
+[node name="GodotHeader" type="ColorRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 910.0
+margin_right = 720.0
+margin_bottom = 960.0
+rect_min_size = Vector2( 0, 50 )
+mouse_filter = 2
+color = Color( 0.482353, 0.815686, 1, 0.619608 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/GodotHeader"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Godot Engine Projects"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Godot" type="ScrollContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 964.0
+margin_right = 720.0
+margin_bottom = 1276.0
+rect_min_size = Vector2( 0, 100 )
+mouse_filter = 1
+scroll_horizontal = 100
+scroll_vertical_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/Godot"]
+margin_left = -100.0
+margin_right = 826.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 720, 300 )
+alignment = 1
+
+[node name="Element" type="ColorRect" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "U3 Forge Webiste"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.0010004
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 159.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "A website built in a form of a game to showcase the Game Developer AbdulRahman Yousry Mahrous's work.
+The webiste is made with Godot and built for HTML5 platform."
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View on Github"
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer"]
+margin_left = 304.0
+margin_right = 309.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element2" type="ColorRect" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer"]
+margin_left = 313.0
+margin_right = 613.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Flappy Bird"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element2"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.0180001
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 177.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "A clone of the famous screen breaking game Flappy Bird Made in Godot Game Engine.
+Flappy Bird is a game where you tap the screen to make the bird fly while trying to avoid the pipes."
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View on Github"
+
+[node name="ColorRect2" type="ColorRect" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer"]
+margin_left = 617.0
+margin_right = 622.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element3" type="ColorRect" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer"]
+margin_left = 626.0
+margin_right = 926.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Can You Remember it?"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element3"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 133.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Classic memory Game where you try to remember the positions of the different images and match them together
+"
+align = 1
+autowrap = true
+
+[node name="Video" type="Button" parent="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element3"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -48.5
+margin_top = -45.0
+margin_right = 48.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "Watch Video"
+
+[node name="C++Header" type="ColorRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1280.0
+margin_right = 720.0
+margin_bottom = 1330.0
+rect_min_size = Vector2( 0, 50 )
+mouse_filter = 2
+color = Color( 0.482353, 0.815686, 1, 0.619608 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/C++Header"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "C++  Projects"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="C++" type="ScrollContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1334.0
+margin_right = 720.0
+margin_bottom = 1646.0
+rect_min_size = Vector2( 0, 100 )
+mouse_filter = 1
+scroll_horizontal = 96
+scroll_vertical_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/C++"]
+margin_left = -96.0
+margin_right = 830.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 720, 300 )
+alignment = 1
+
+[node name="Element" type="ColorRect" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Qompressor Compression utility"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element"]
+anchor_left = 0.017
+anchor_top = 0.313
+anchor_right = 1.0
+anchor_bottom = 0.313
+margin_left = -0.1
+margin_top = 0.0999908
+margin_right = 1.0
+margin_bottom = 168.1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Worked on the text compression using Huffman Algorithm.
+Qompressor is a free and open source file archiving utility that can compress text files and images"
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View on Github"
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer"]
+margin_left = 304.0
+margin_right = 309.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element2" type="ColorRect" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer"]
+margin_left = 313.0
+margin_right = 613.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Minesweeper C++ Game"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element2"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 191.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Worked on programming the Grid UI using C++ SFML and TGUI. 
+Minesweeper is a classic video game, its objective is to clear a given grid containing a given number of mines without blowing any of them"
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View on Github"
+
+[node name="ColorRect2" type="ColorRect" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer"]
+margin_left = 617.0
+margin_right = 622.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element3" type="ColorRect" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer"]
+margin_left = 626.0
+margin_right = 926.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "2D Local Multiplayer Space Shooter Game"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element3"]
+anchor_left = 0.017
+anchor_top = 0.313
+anchor_right = 1.0
+anchor_bottom = 0.313
+margin_left = -0.1
+margin_top = 0.0999908
+margin_right = 1.0
+margin_bottom = 142.1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Local Multiplayer 2D space shooter game made with native C++ and SFML library"
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element3"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View on Github"
+
+[node name="AIHeader" type="ColorRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1650.0
+margin_right = 720.0
+margin_bottom = 1700.0
+rect_min_size = Vector2( 0, 50 )
+mouse_filter = 2
+color = Color( 0.482353, 0.815686, 1, 0.619608 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/AIHeader"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "AI  Projects"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="AI" type="ScrollContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 1704.0
+margin_right = 720.0
+margin_bottom = 2004.0
+rect_min_size = Vector2( 0, 100 )
+mouse_filter = 1
+scroll_vertical_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/AI"]
+margin_right = 720.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 720, 300 )
+alignment = 1
+
+[node name="Element" type="ColorRect" parent="ScrollContainer/VBoxContainer/AI/HBoxContainer"]
+margin_right = 720.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/AI/HBoxContainer/Element"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Search Magician"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/AI/HBoxContainer/Element"]
+anchor_left = 0.017
+anchor_top = 0.313
+anchor_right = 1.0
+anchor_bottom = 0.313
+margin_left = -0.240001
+margin_top = -21.9
+margin_right = 1.0
+margin_bottom = 101.1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Search Magician is a project that uses Machine Learning to allow you to search 
+for a specific words inside the content of a certain video.
+The Server side is programmed in Python.
+I worked on the server side specifically  topic classification using SVM algorithm."
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/AI/HBoxContainer/Element"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View on Github"
+
+[node name="EducationHeader" type="ColorRect" parent="ScrollContainer/VBoxContainer"]
+margin_top = 2008.0
+margin_right = 720.0
+margin_bottom = 2058.0
+rect_min_size = Vector2( 0, 50 )
+mouse_filter = 2
+color = Color( 0.482353, 0.815686, 1, 0.619608 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/EducationHeader"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Curriculum Sldies Samples"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Education" type="ScrollContainer" parent="ScrollContainer/VBoxContainer"]
+margin_top = 2062.0
+margin_right = 720.0
+margin_bottom = 2374.0
+rect_min_size = Vector2( 0, 100 )
+mouse_filter = 1
+scroll_horizontal = 100
+scroll_vertical_enabled = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/VBoxContainer/Education"]
+margin_left = -100.0
+margin_right = 1765.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 720, 300 )
+alignment = 1
+
+[node name="Element" type="ColorRect" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer"]
+margin_right = 300.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "3D Game Development Intro Sample"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element"]
+anchor_left = 0.017
+anchor_top = 0.313
+anchor_right = 1.0
+anchor_bottom = 0.313
+margin_left = -0.1
+margin_top = 0.0999908
+margin_right = 1.0
+margin_bottom = 141.1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Transition from 2D game development in Godot and introduciton to 3D Game Development Sample"
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View Slides"
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer"]
+margin_left = 304.0
+margin_right = 309.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element2" type="ColorRect" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer"]
+margin_left = 313.0
+margin_right = 613.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "AR in Unity Sample"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element2"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 116.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "An introduction to Augmented Reality in Unity Game Engine"
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element2"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View Slides"
+
+[node name="ColorRect2" type="ColorRect" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer"]
+margin_left = 617.0
+margin_right = 622.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element3" type="ColorRect" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer"]
+margin_left = 626.0
+margin_right = 926.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element3"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Build and Publish Games Sample"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element3"]
+anchor_left = 0.017
+anchor_top = 0.313
+anchor_right = 1.0
+anchor_bottom = 0.313
+margin_left = -0.1
+margin_top = 0.0999908
+margin_right = 1.0
+margin_bottom = 117.1
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "An introduction to how to prepare a game for publishing including going to social media "
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element3"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View Slides"
+
+[node name="ColorRect3" type="ColorRect" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer"]
+margin_left = 930.0
+margin_right = 935.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element4" type="ColorRect" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer"]
+margin_left = 939.0
+margin_right = 1239.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element4"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Game Physics"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element4"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 116.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "An introduction to Physics in games including collisions and how to handle them"
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element4"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View Slides"
+
+[node name="ColorRect4" type="ColorRect" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer"]
+margin_left = 1243.0
+margin_right = 1248.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element5" type="ColorRect" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer"]
+margin_left = 1252.0
+margin_right = 1552.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element5"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "UI Sample"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element5"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 116.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "An introduction to User Interface and the problem with different screens resolutions and aspect ratios"
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element5"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View Slides"
+
+[node name="ColorRect5" type="ColorRect" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer"]
+margin_left = 1556.0
+margin_right = 1561.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 5, 100 )
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.219608 )
+
+[node name="Element6" type="ColorRect" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer"]
+margin_left = 1565.0
+margin_right = 1865.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 300 )
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color( 1, 1, 1, 0 )
+
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element6"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -140.0
+margin_top = 20.0
+margin_right = 140.0
+margin_bottom = 51.0
+custom_fonts/font = SubResource( 3 )
+text = "Unity Intro Sample"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label6" type="Label" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element6"]
+anchor_left = 0.017
+anchor_top = 0.197
+anchor_right = 1.0
+anchor_bottom = 0.197
+margin_left = -0.1
+margin_top = -0.100002
+margin_right = 1.0
+margin_bottom = 116.9
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "An introduction to Unity Game Engine Sample"
+align = 1
+autowrap = true
+
+[node name="Store" type="Button" parent="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element6"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -54.5
+margin_top = -45.0
+margin_right = 55.5
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 6 )
+text = "View Slides"
+
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/ColorRect/Home" to="." method="_on_Home_button_down"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/ColorRect/PDFButton" to="." method="_on_Link_button_down" binds= [ "https://drive.google.com/file/d/1Foqxr271S9XhTm0-_4RASZ_Fhmm0ffvn/view?usp=sharing" ]]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Filter/HBoxContainer/UE" to="." method="_on_UE_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Filter/HBoxContainer/Unity" to="." method="_on_Unity_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Filter/HBoxContainer/Godot" to="." method="_on_Godot_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Filter/HBoxContainer/AR" to="." method="_on_AR_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Filter/HBoxContainer/VR" to="." method="_on_VR_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Filter/HBoxContainer/C++" to="." method="_on_C_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Filter/HBoxContainer/C#" to="." method="_on_cs_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Filter/HBoxContainer/Python" to="." method="_on_Python_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Filter/HBoxContainer/AI" to="." method="_on_AI_toggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Filter/HBoxContainer/Education" to="." method="_on_Education_toggled"]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element3/Store" to="." method="_on_Link_button_down" binds= [ "https://store.steampowered.com/app/1159700/Knights_of_Light_The_Prologue/" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element3/Video" to="." method="_on_Link_button_down" binds= [ "https://www.youtube.com/watch?v=rgxDXgq5MVc" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Unreal/HBoxContainer/Element4/Video" to="." method="_on_Link_button_down" binds= [ "https://www.youtube.com/watch?v=qGye5IkmLgg" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Unity/HBoxContainer/RodyAR/Store" to="." method="_on_Link_button_down" binds= [ "https://play.google.com/store/apps/details?id=com.zonetech.rody&pli=1" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Unity/HBoxContainer/RodyAR/Video" to="." method="_on_Link_button_down" binds= [ "https://www.youtube.com/watch?v=Shy6yw716Vw" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Unity/HBoxContainer/wARenyAR/Video" to="." method="_on_Link_button_down" binds= [ "https://www.youtube.com/watch?v=QuSdWE6ZNUE&feature=youtu.be" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Unity/HBoxContainer/LOL/Video" to="." method="_on_Link_button_down" binds= [ "https://www.youtube.com/watch?v=cbuIgAUcZcM&feature=youtu.be" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element/Store" to="." method="_on_Link_button_down" binds= [ "https://github.com/u3forge/u3forgeWebsite" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element2/Store" to="." method="_on_Link_button_down" binds= [ "https://github.com/u3forge/godot-flappy-bird" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Godot/HBoxContainer/Element3/Video" to="." method="_on_Link_button_down" binds= [ "https://youtu.be/Fg9C-I6fHmw" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element/Store" to="." method="_on_Link_button_down" binds= [ "https://github.com/Satharus/Qompressor" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element2/Store" to="." method="_on_Link_button_down" binds= [ "https://github.com/ahmedabuamra/MinesweeperGame" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/C++/HBoxContainer/Element3/Store" to="." method="_on_Link_button_down" binds= [ "https://github.com/u3forge/SFML2DSpaceShooter" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/AI/HBoxContainer/Element/Store" to="." method="_on_Link_button_down" binds= [ "https://github.com/search-magician/search_magician" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element/Store" to="." method="_on_Link_button_down" binds= [ "https://drive.google.com/file/d/1_CIglOCIxKy-q8Dteha6PDbLVOKeSpRD/view?usp=sharing" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element2/Store" to="." method="_on_Link_button_down" binds= [ "https://drive.google.com/file/d/1Lq2P8oY9cBaDfUOCFz4FbJWMirLsa9Rx/view?usp=drive_link" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element3/Store" to="." method="_on_Link_button_down" binds= [ "https://drive.google.com/file/d/1zK08XgLfRY6XnLKaVxK-KRzPvM5Br6t4/view?usp=drive_link" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element4/Store" to="." method="_on_Link_button_down" binds= [ "https://drive.google.com/file/d/1Hve--lj_g0_tMfiw0_ixfmadOD4cVvJQ/view?usp=drive_link" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element5/Store" to="." method="_on_Link_button_down" binds= [ "https://drive.google.com/file/d/1E2VH_SHqq6haQRWs7HWsN4302ICax-Vl/view?usp=drive_link" ]]
+[connection signal="button_down" from="ScrollContainer/VBoxContainer/Education/HBoxContainer/Element6/Store" to="." method="_on_Link_button_down" binds= [ "https://drive.google.com/file/d/1U6p22T1hYTq4Y9Qe3zOqIk6Pt_DWyCCE/view?usp=drive_link" ]]
